@@ -1,0 +1,72 @@
+<div class = "page-header">
+  <div class ="container">
+    <h1>Employees</h1>
+  </div>
+
+</div>
+
+<div class = "container">
+
+  <div class="row end-xs mt-1" >
+    <div class="col-xs-12">
+      <input type="text" class ="search-input" placeholder="Search by ID / Name"
+      [(ngModel)]="filterString"
+      (keyup) = "filterStudents()"
+      >
+    </div>
+  </div>
+  <div class = "mt-1 mat-elevation-z8">
+    <table mat-table matSort [dataSource]="dataSource" class="">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- ssn Column -->
+      <ng-container matColumnDef="SSN">
+        <th mat-header-cell *matHeaderCellDef> SSN </th>
+        <td mat-cell *matCellDef="let element"> {{element.ssn}} </td>
+      </ng-container>
+
+      <!-- visastatus Column -->
+      <ng-container matColumnDef="VisaStatus">
+        <th mat-header-cell *matHeaderCellDef > VisaStatus </th>
+        <td mat-cell *matCellDef="let element"> {{element.visaStatus}} </td>
+      </ng-container>
+
+      <!-- startdate Column -->
+      <ng-container matColumnDef="StartDate">
+        <th mat-header-cell *matHeaderCellDef> StartDate </th>
+        <td mat-cell *matCellDef="let element"> {{element.startDate | date:'MM-dd-yyyy'}} </td>
+      </ng-container>
+
+      <!-- EndDate Column -->
+      <ng-container matColumnDef="EndDate">
+        <th mat-header-cell *matHeaderCellDef >  EndDate</th>
+        <td mat-cell *matCellDef="let element"> {{element.endDate | date:'MM-dd-yyyy' }} </td>
+      </ng-container>
+
+      <!-- EmployeeId Column -->
+      <ng-container matColumnDef="EmployeeID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  EmployeeID</th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeId }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+    </mat-paginator>
+
+  </div>
+
+</div>
