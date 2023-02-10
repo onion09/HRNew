@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VisamanageComponent } from './visamanage.component';
+import { VisamanagecoComponent } from './visamanageco.component';
 
 describe('VisamanageComponent', () => {
-  let component: VisamanageComponent;
-  let fixture: ComponentFixture<VisamanageComponent>;
+  let component: VisamanagecoComponent;
+  let fixture: ComponentFixture<VisamanagecoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VisamanageComponent ]
+      declarations: [ VisamanagecoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VisamanageComponent);
+    fixture = TestBed.createComponent(VisamanagecoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

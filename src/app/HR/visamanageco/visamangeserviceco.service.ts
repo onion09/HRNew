@@ -5,11 +5,14 @@ import { Visa } from 'src/app/models/ui-models/visa.model';
 @Injectable({
   providedIn: 'root'
 })
-export class VisamangeserviceService {
+export class VisamangeservicecoService {
 
   private baseApiUrl = 'https://localhost:7105';
   constructor(private httpClient: HttpClient) { }
   getVisas(): Observable<Visa[]>{
-    return this.httpClient.get<Visa[]>(this.baseApiUrl + 'hr/getvisas');
+    return this.httpClient.get<Visa[]>(this.baseApiUrl + '/hr/getvisas');
+  }
+  getVisa(personID:string):Observable<Visa>{
+    return this.httpClient.get<Visa>(this.baseApiUrl +'/hr/getvisas/' + personID);
   }
 }

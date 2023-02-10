@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VisamanageComponent } from './HR/visamanage/visamanage.component';
+import { VisamanagecoComponent } from './HR/visamanageco/visamanageco.component';
 import{ HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Add below imports to the Imports Section on the top of the page
@@ -51,13 +51,15 @@ import { MatTableModule } from '@angular/material/table';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { EmployelistComponent } from './employelist/employelist.component';
 import { FormsModule } from '@angular/forms';
+import { VisadetailComponent } from './HR/visamanageco/visadetail/visadetail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VisamanageComponent,
+    VisamanagecoComponent,
     TopNavComponent,
     EmployelistComponent,
+    VisadetailComponent,
 
 
   ],

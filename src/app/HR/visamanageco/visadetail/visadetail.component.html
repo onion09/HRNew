@@ -1,0 +1,43 @@
+<div class="page-header">
+  <div class="container">
+    <h1>VisaDetails</h1>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+      <a routerLink="/visamanage" color="primary" mat-raised-button>
+        <mat-icon>chevron_left</mat-icon>
+        Go Back
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div><span>Name: </span>{{visa.name}}</div>
+      <div><span>Visa: </span>{{visa.workAuth}}</div>
+      <div><span>Start Date: </span>{{visa.startDate}}</div>
+      <div><span>End Date: </span>{{visa.expireDate}}</div>
+      <div><span>Day Left: </span>{{visa.dayLeft}}</div>
+      <div><span>Is Action Required: </span>{{visa.isActionRequired}}</div>
+
+
+    </div>
+    <div class="col-xs-6">
+      <div class="row center-xs">
+        <div>
+          <li *ngFor="let document  of visa.documents">
+              <span class="name">{{document.name}}</span>
+              <span class="createdate">{{document.createdDate}}</span>
+              
+          </li>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
